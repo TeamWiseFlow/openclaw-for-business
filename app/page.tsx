@@ -1,103 +1,212 @@
-import Image from "next/image";
+import Link from "next/link";
+import GitHubStarsBadge from "@/components/GitHubStarsBadge";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent pointer-events-none" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight animate-fade-in-up">
+            雇佣一支 7×24 小时<br />
+            为你盈利的 AI 数字员工团队
+          </h1>
+
+          <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto animate-fade-in-up-delay-1">
+            基于 GitHub 8.2K star 多智能体项目 wiseflow
+          </p>
+          <div className="flex justify-center animate-fade-in-up-delay-1">
+            <GitHubStarsBadge />
+          </div>
+
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up-delay-2">
+            <Link
+              href="/contact"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-primary-light text-white font-medium text-base hover:opacity-90 transition-opacity"
+            >
+              立即咨询
+            </Link>
+            <Link
+              href="/teams"
+              className="px-8 py-3.5 rounded-full border border-white/10 text-text-secondary hover:text-white hover:border-white/20 transition-all"
+            >
+              了解 AI 团队 →
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* What is OFB */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              不是买软件，而是<strong className="text-primary">雇佣团队</strong>
+            </h2>
+            <p className="text-text-secondary text-lg leading-relaxed">
+              OpenClaw for Business 为您提供完整的 AI 数字员工托管服务。
+              我们部署、运维、保障您的 AI 团队 7×24 小时运转——
+              从内容引流到销售转化，全流程自动化，无需任何技术背景。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Architecture */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              每支团队的结构
+            </h2>
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+              后台支撑 + 前台业务，标配齐全，前台可按需定制
+            </p>
+          </div>
+
+          {/* Backend Team */}
+          <div className="mb-8">
+            <div className="text-sm text-accent font-semibold uppercase tracking-widest mb-4 text-center">
+              后台支撑团队（标配）
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {[
+                {
+                  name: "Main Agent",
+                  desc: "调度中心，统一管理和协调所有智能体",
+                  icon: "⚙️",
+                },
+                {
+                  name: "HRBP",
+                  desc: "智能体持续改进，扫描反馈驱动迭代升级",
+                  icon: "📈",
+                },
+                {
+                  name: "IT Engineer",
+                  desc: "技术运维，系统配置、故障排查、自动修复",
+                  icon: "🔧",
+                },
+              ].map((role) => (
+                <div
+                  key={role.name}
+                  className="p-6 rounded-xl bg-surface border border-white/5 hover:border-primary/30 transition-all"
+                >
+                  <div className="text-2xl mb-3">{role.icon}</div>
+                  <h3 className="text-white font-semibold mb-2">{role.name}</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {role.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Frontend Team */}
+          <div>
+            <div className="text-sm text-primary font-semibold uppercase tracking-widest mb-4 text-center">
+              前台业务团队（可选 · 可定制）
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {[
+                {
+                  name: "Sales CS",
+                  desc: "销售型客服，促进成交、记录客户信息、发起收款",
+                  icon: "💼",
+                },
+                {
+                  name: "BD",
+                  desc: "商务拓展，人脉分析、批量触达、主动获客",
+                  icon: "🤝",
+                },
+                {
+                  name: "自媒体运营",
+                  desc: "内容创作、多平台自动发布、引流转化",
+                  icon: "📱",
+                },
+              ].map((role) => (
+                <div
+                  key={role.name}
+                  className="p-6 rounded-xl bg-surface border border-white/5 hover:border-primary/30 transition-all"
+                >
+                  <div className="text-2xl mb-3">{role.icon}</div>
+                  <h3 className="text-white font-semibold mb-2">{role.name}</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {role.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              为什么选择我们
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                title: "7×24 全天候",
+                desc: "AI 团队不间断运转，白天黑夜持续为您服务",
+                icon: "🕐",
+              },
+              {
+                title: "自主协作",
+                desc: "多智能体自主互助，遇问题自动调用 IT 排查修复",
+                icon: "🧠",
+              },
+              {
+                title: "开箱即用",
+                desc: "无需技术背景，我们托管一切——部署、运维、保障",
+                icon: "🚀",
+              },
+              {
+                title: "按需定制",
+                desc: "前台角色灵活配置，匹配您的业务需求",
+                icon: "⚡",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="p-6 rounded-xl bg-[#0A0A0A] border border-white/5 hover:border-white/10 transition-all"
+              >
+                <div className="text-3xl mb-4">{item.icon}</div>
+                <h3 className="text-white font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20">
+        <div className="max-w-3xl mx-auto px-6 sm:px-16 lg:px-24 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            准备好为您的业务组建 AI 团队了吗？
+          </h2>
+          <p className="text-text-secondary text-lg mb-8">
+            联系我们，了解如何定制最适合您的 AI 数字员工团队
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-primary-light text-white font-medium text-base hover:opacity-90 transition-opacity"
+          >
+            联系我们 →
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

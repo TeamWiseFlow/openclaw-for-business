@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OpenClaw for Business — 官网
 
-## Getting Started
+面向企业的 AI 数字员工团队托管服务官网。
 
-First, run the development server:
+## 项目结构
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+app/
+├── layout.tsx          # 全局布局（导航栏 + 页脚）
+├── page.tsx            # 首页
+├── teams/page.tsx      # AI 团队
+├── pricing/page.tsx    # 价格方案
+├── cases/page.tsx      # 客户案例
+├── media/page.tsx      # 自媒体矩阵
+└── contact/page.tsx    # 联系我们
+components/
+├── Navbar.tsx          # 顶部导航
+├── Footer.tsx          # 底部页脚
+└── GitHubStarsBadge.tsx # GitHub 星标组件
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 本地开发
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd ~/projects/openclaw-for-business
+pnpm install
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+打开 [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## 技术栈
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 15 (App Router)
+- Tailwind CSS 4
+- React 19
+- TypeScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 视觉规范
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+详见 `website-ofb/design-guide.md`（位于 workspace 目录）
