@@ -36,7 +36,7 @@ export default function ContactPage() {
 
           {/* 企业微信 */}
           <div className="p-8 rounded-xl bg-surface border border-white/5">
-            <h3 className="text-xl font-bold text-white mb-4">企业微信</h3>
+            <h3 className="text-xl font-bold text-white mb-4">掌柜的企业微信</h3>
             <div className="space-y-3 text-text-secondary">
               <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,12 +44,12 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <div className="text-sm leading-relaxed">
-                    扫码添加企业微信<br />
+                    扫码添加掌柜，统一对外客服<br />
                     <span className="text-text-muted text-xs">（添加后由 AI 客服接待）</span>
                   </div>
                   <Image
                     src="/wechat-qr.png"
-                    alt="企业微信二维码"
+                    alt="掌柜企业微信二维码"
                     width={128}
                     height={128}
                     className="mt-3 rounded-lg border border-white/5"
