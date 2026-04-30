@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,8 +21,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-lg font-bold text-white">
-            <span className="text-primary">OFB</span>
+          <Link href="/" className="flex items-center gap-3 text-lg font-bold text-white">
+            <Image
+              src="/logo.jpg"
+              alt="openclaw-for-business"
+              width={32}
+              height={32}
+              className="rounded-lg"
+              unoptimized
+            />
             <span className="hidden sm:inline text-text-secondary text-sm font-normal">
               OpenClaw for Business
             </span>
