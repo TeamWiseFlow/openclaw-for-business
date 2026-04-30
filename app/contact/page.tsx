@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // 联系我们页
 export default function ContactPage() {
   return (
@@ -45,10 +47,14 @@ export default function ContactPage() {
                     扫码添加企业微信<br />
                     <span className="text-text-muted text-xs">（添加后由 AI 客服接待）</span>
                   </div>
-                  {/* 二维码占位 */}
-                  <div className="mt-3 w-32 h-32 rounded-lg bg-surface-light border border-white/5 flex items-center justify-center text-text-muted text-xs">
-                    二维码待添加
-                  </div>
+                  <Image
+                    src="/wechat-qr.png"
+                    alt="企业微信二维码"
+                    width={128}
+                    height={128}
+                    className="mt-3 rounded-lg border border-white/5"
+                    unoptimized
+                  />
                 </div>
               </div>
             </div>
