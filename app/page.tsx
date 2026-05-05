@@ -1,5 +1,6 @@
 import Link from "next/link";
 import GitHubStarsBadge from "@/components/GitHubStarsBadge";
+import CrewLineup from "@/components/crew/CrewLineup";
 
 export default function Home() {
   return (
@@ -55,93 +56,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team Architecture */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              每支团队的结构
-            </h2>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              后台支撑 + 前台业务，标配齐全，前台可按需定制
-            </p>
-          </div>
-
-          {/* Backend Team */}
-          <div className="mb-8">
-            <div className="text-sm text-accent font-semibold uppercase tracking-widest mb-4 text-center">
-              后台支撑团队（标配）
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              {[
-                {
-                  name: "Main Agent",
-                  desc: "调度中心，统一管理和协调所有智能体",
-                  icon: "⚙️",
-                },
-                {
-                  name: "HRBP",
-                  desc: "智能体持续改进，扫描反馈驱动迭代升级",
-                  icon: "📈",
-                },
-                {
-                  name: "IT Engineer",
-                  desc: "技术运维，系统配置、故障排查、自动修复",
-                  icon: "🔧",
-                },
-              ].map((role) => (
-                <div
-                  key={role.name}
-                  className="p-6 rounded-xl bg-surface border border-white/5 hover:border-primary/30 transition-all"
-                >
-                  <div className="text-2xl mb-3">{role.icon}</div>
-                  <h3 className="text-white font-semibold mb-2">{role.name}</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {role.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Frontend Team */}
-          <div>
-            <div className="text-sm text-primary font-semibold uppercase tracking-widest mb-4 text-center">
-              前台业务团队（可选 · 可定制）
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              {[
-                {
-                  name: "Sales CS",
-                  desc: "销售型客服，促进成交、记录客户信息、发起收款",
-                  icon: "💼",
-                },
-                {
-                  name: "BD",
-                  desc: "商务拓展，人脉分析、批量触达、主动获客",
-                  icon: "🤝",
-                },
-                {
-                  name: "自媒体运营",
-                  desc: "内容创作、多平台自动发布、引流转化",
-                  icon: "📱",
-                },
-              ].map((role) => (
-                <div
-                  key={role.name}
-                  className="p-6 rounded-xl bg-surface border border-white/5 hover:border-primary/30 transition-all"
-                >
-                  <div className="text-2xl mb-3">{role.icon}</div>
-                  <h3 className="text-white font-semibold mb-2">{role.name}</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {role.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Crew Lineup */}
+      <CrewLineup />
 
       {/* Why Choose Us */}
       <section className="py-20 bg-surface">

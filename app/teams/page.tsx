@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CrewLineup from "@/components/crew/CrewLineup";
 
 // AI 团队页
 export default function TeamsPage() {
@@ -23,16 +24,10 @@ export default function TeamsPage() {
 
   return (
     <div className="pt-24 pb-20">
-      <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            可雇佣的 AI 团队
-          </h1>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            每支团队均包含后台支撑团队（Main Agent + HRBP + IT Engineer），前台角色可按需配置
-          </p>
-        </div>
+      {/* Crew lineup hero */}
+      <CrewLineup />
+
+      <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 mt-8">
 
         {/* Current Teams */}
         <div className="mb-16">
