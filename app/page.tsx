@@ -1,6 +1,6 @@
 import Link from "next/link";
 import GitHubStarsBadge from "@/components/GitHubStarsBadge";
-import CrewLineup from "@/components/crew/CrewLineup";
+import CrewHero from "@/components/crew/CrewHero";
 
 export default function Home() {
   return (
@@ -56,8 +56,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Crew Lineup */}
-      <CrewLineup />
+      {/* Crew Lineup — full image hero */}
+      <CrewHero />
 
       {/* Why Choose Us */}
       <section className="py-20 bg-surface">
