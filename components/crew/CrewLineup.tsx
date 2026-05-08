@@ -1,10 +1,30 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { crewMembers, CrewMember } from "@/app/data/crew";
+import { allCrewTeams, CrewMember, CrewTeam } from "@/app/data/crew";
 
-function CharacterSlot({
+function MysteryCard() {
+  return (
+    <div className="flex-shrink-0 w-36 sm:w-44 select-none">
+      <div
+        className="relative rounded-lg overflow-hidden border border-white/10"
+        style={{ aspectRatio: "2 / 3", background: "linear-gradient(135deg, #1a1a24 0%, #0d0d14 100%)" }}
+      >
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+          <span className="text-4xl sm:text-5xl font-bold text-white/10">?</span>
+          <span className="text-xs text-white/20">即将揭晓</span>
+        </div>
+      </div>
+      <div className="text-center mt-2">
+        <div className="text-xs font-bold text-white/20 uppercase truncate">???</div>
+        <div className="text-[10px] text-white/10 mt-0.5">即将揭晓</div>
+      </div>
+    </div>
+  );
+}
+
+function CrewCard({
   member,
   isActive,
   isDimmed,
@@ -21,80 +41,128 @@ function CharacterSlot({
 
   return (
     <div
-      className="relative flex-1 min-w-0 cursor-pointer select-none"
+      className="flex-shrink-0 w-36 sm:w-44 cursor-pointer select-none"
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     >
-      {/* Portrait container */}
+      {/* Card body */}
       <div
-        className="relative overflow-hidden transition-all duration-400"
+        className="relative rounded-lg overflow-hidden border transition-all duration-300"
         style={{
           aspectRatio: "2 / 3",
-          transform: isActive ? "scale(1.06) translateY(-8px)" : "scale(1)",
-          opacity: isDimmed ? 0.35 : 1,
-          filter: isActive
-            ? `drop-shadow(0 0 24px ${member.accentColor}80)`
-            : "none",
-          transition: "transform 350ms cubic-bezier(0.16,1,0.3,1), opacity 250ms ease, filter 350ms ease",
+          borderColor: isActive ? `${member.accentColor}60` : "rgba(255,255,255,0.06)",
+          transform: isActive ? "scale(1.05) translateY(-4px)" : "scale(1)",
+          boxShadow: isActive
+            ? `0 0 32px ${member.accentColor}30, 0 8px 24px rgba(0,0,0,0.5)`
+            : "0 4px 12px rgba(0,0,0,0.3)",
+          background: "linear-gradient(180deg, #14141c 0%, #0a0a10 100%)",
+          opacity: isDimmed ? 0.4 : 1,
         }}
       >
-        {/* Atmospheric background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(ellipse at 50% 30%, ${member.accentColor}18 0%, transparent 70%), linear-gradient(to bottom, #0d0d14 0%, #080810 100%)`,
-          }}
-        />
-
-        {/* Character image or styled placeholder */}
-        {!imgError ? (
+        {/* Image or placeholder */}
+        {!imgError && member.image ? (
           <Image
             src={member.image}
             alt={member.name}
             fill
             className="object-cover object-top"
             onError={() => setImgError(true)}
-            sizes="(max-width: 768px) 33vw, 16vw"
+            sizes="176px"
           />
         ) : (
-          /* Placeholder while awaiting media-operator assets */
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+            {/* Colored placeholder silhouette */}
             <div
-              className="w-16 h-16 rounded-full border-2 opacity-30"
+              className="w-12 h-12 rounded-full border-2 opacity-25"
               style={{ borderColor: member.accentColor }}
             />
             <div
-              className="w-8 h-20 rounded-full opacity-20"
+              className="w-6 h-20 rounded-full opacity-15"
               style={{ background: member.accentColor }}
             />
           </div>
         )}
 
-        {/* Bottom fade into site background */}
-        <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-[#080810] to-transparent" />
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0a0a10] to-transparent" />
 
-        {/* Active highlight line */}
+        {/* Accent glow at bottom when active */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-px transition-opacity duration-300"
+          className="absolute bottom-0 left-0 right-0 h-0.5 transition-opacity duration-300"
           style={{
-            background: `linear-gradient(90deg, transparent, ${member.accentColor}, transparent)`,
+            background: `linear-gradient(90deg, transparent, ${member.accentColor}80, transparent)`,
             opacity: isActive ? 1 : 0,
           }}
         />
       </div>
 
       {/* Name plate */}
-      <div
-        className="text-center pt-2 pb-1 transition-all duration-300"
-        style={{ opacity: isDimmed ? 0.25 : 1 }}
-      >
+      <div className="text-center mt-2">
         <div
-          className="text-xs font-bold tracking-widest uppercase truncate"
-          style={{ color: isActive ? member.accentColor : "rgba(255,255,255,0.55)" }}
+          className="text-xs sm:text-sm font-bold tracking-wide truncate transition-colors duration-300"
+          style={{ color: isActive ? member.accentColor : "rgba(255,255,255,0.7)" }}
         >
           {member.name}
         </div>
-        <div className="text-[10px] text-white/30 mt-0.5 truncate">{member.role}</div>
+        <div className="text-[10px] sm:text-xs text-white/25 mt-0.5">{member.role}</div>
+      </div>
+    </div>
+  );
+}
+
+function TeamRow({
+  team,
+  activeId,
+  onHover,
+  onLeave,
+}: {
+  team: CrewTeam;
+  activeId: string | null;
+  onHover: (id: string) => void;
+  onLeave: () => void;
+}) {
+  return (
+    <div className="mb-8">
+      {/* Team header */}
+      <div className="flex items-center gap-3 mb-4">
+        <h3 className="text-sm font-semibold text-white/80">{team.label}</h3>
+        {team.badge && (
+          <span
+            className="px-2 py-0.5 rounded text-[10px] font-medium"
+            style={{
+              background:
+                team.badge === "标配" ? "rgba(245,158,11,0.12)" : "rgba(99,102,241,0.12)",
+              color: team.badge === "标配" ? "#F59E0B" : "#6366F1",
+            }}
+          >
+            {team.badge}
+          </span>
+        )}
+        {team.upcoming && (
+          <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-white/5 text-white/25">
+            即将上线
+          </span>
+        )}
+        <span className="text-[11px] text-white/20">{team.subtitle}</span>
+      </div>
+
+      {/* Cards row */}
+      <div className="flex gap-3 sm:gap-4">
+        {team.members.map((member) => {
+          if (team.upcoming) {
+            return <MysteryCard key={member.id} />;
+          }
+          return (
+            <CrewCard
+              key={member.id}
+              member={member}
+              isActive={activeId === member.id}
+              isDimmed={activeId !== null && activeId !== member.id}
+              onHover={() => onHover(member.id)}
+              onLeave={onLeave}
+            />
+          );
+        })}
       </div>
     </div>
   );
@@ -102,81 +170,54 @@ function CharacterSlot({
 
 export default function CrewLineup() {
   const [activeId, setActiveId] = useState<string | null>(null);
-  const activeMember = crewMembers.find((m) => m.id === activeId);
+
+  const allMembers = allCrewTeams.flatMap((t) => t.members);
+  const activeMember = allMembers.find((m) => m.id === activeId);
 
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* Deep atmosphere */}
+      {/* Atmosphere */}
       <div className="absolute inset-0 bg-[#080810]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(99,102,241,0.12),transparent)]" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_60%,rgba(99,102,241,0.08),transparent)]" />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
-        {/* Header */}
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-12 lg:px-16">
+        {/* Section header */}
         <div className="text-center mb-12">
-          <div className="text-xs font-semibold uppercase tracking-[0.3em] text-white/30 mb-3">
+          <div className="text-xs font-semibold uppercase tracking-[0.3em] text-white/25 mb-3">
             你的 AI 员工
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             认识你的团队
           </h2>
-          <p className="text-white/40 text-sm">
-            后台三人标配支撑，前台角色按需配置——悬停了解每位成员
+          <p className="text-white/35 text-sm max-w-xl mx-auto">
+            每支团队标配内部支撑组（幕后），前台角色按业务需求灵活组合
           </p>
         </div>
 
-        {/* Team divider labels */}
-        <div className="flex mb-4 max-w-4xl mx-auto">
-          <div className="flex-[3] text-center">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-accent/60">
-              后台支撑（标配）
-            </span>
-          </div>
-          <div className="flex-[3] text-center">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-primary/60">
-              前台业务（可选）
-            </span>
-          </div>
-        </div>
-
-        {/* Divider line with gap */}
-        <div className="flex max-w-4xl mx-auto mb-6">
-          <div className="flex-[3] border-t border-accent/20" />
-          <div className="w-6" />
-          <div className="flex-[3] border-t border-primary/20" />
-        </div>
-
-        {/* Character lineup */}
-        <div className="flex items-end gap-2 sm:gap-3 max-w-4xl mx-auto">
-          {crewMembers.map((member, i) => (
-            <Fragment key={member.id}>
-              {i === 3 && (
-                <div className="w-px self-stretch bg-white/5 flex-shrink-0" />
-              )}
-              <CharacterSlot
-                member={member}
-                isActive={activeId === member.id}
-                isDimmed={activeId !== null && activeId !== member.id}
-                onHover={() => setActiveId(member.id)}
-                onLeave={() => setActiveId(null)}
-              />
-            </Fragment>
-          ))}
-        </div>
-
-        {/* Active member description */}
-        <div className="h-14 flex items-center justify-center mt-6 max-w-lg mx-auto">
+        {/* Active member description bar at top */}
+        <div className="h-8 flex items-center justify-center mb-4">
           <p
-            className="text-sm text-center transition-all duration-300"
+            className="text-xs sm:text-sm text-center transition-all duration-300"
             style={{
               color: activeMember?.accentColor ?? "transparent",
               opacity: activeMember ? 1 : 0,
-              transform: activeMember ? "translateY(0)" : "translateY(4px)",
+              transform: activeMember ? "translateY(0)" : "translateY(2px)",
             }}
           >
             {activeMember?.desc}
           </p>
         </div>
+
+        {/* Team rows */}
+        {allCrewTeams.map((team) => (
+          <TeamRow
+            key={team.id}
+            team={team}
+            activeId={activeId}
+            onHover={setActiveId}
+            onLeave={() => setActiveId(null)}
+          />
+        ))}
       </div>
     </section>
   );

@@ -1,26 +1,11 @@
 import Link from "next/link";
 import CrewLineup from "@/components/crew/CrewLineup";
+import { allCrewTeams } from "@/app/data/crew";
 
 // AI 团队页
 export default function TeamsPage() {
-  const currentTeams = [
-    {
-      name: "自动化获客团队",
-      status: "可雇佣",
-      desc: "全自动完成「内容引流 → 主动拓客 → 销售转化」完整链路",
-      roles: [
-        { name: "Sales CS", desc: "销售型客服，促进成交、记录客户信息" },
-        { name: "BD", desc: "商务拓展，人脉分析、批量触达" },
-        { name: "自媒体运营", desc: "内容创作、多平台发布、引流" },
-      ],
-      customizable: "Sales CS 数量、产品线划分、行业话术均可定制",
-    },
-  ];
-
-  const upcomingTeams = [
-    { name: "智能财务团队", desc: "自动化记账、报税、财务报表" },
-    { name: "HR 管理团队", desc: "简历筛选、面试安排、入职流程自动化" },
-  ];
+  const purchasableTeams = allCrewTeams.filter((t) => t.badge === "可雇佣");
+  const upcomingTeams = allCrewTeams.filter((t) => t.upcoming);
 
   return (
     <div className="pt-24 pb-20">
@@ -28,36 +13,42 @@ export default function TeamsPage() {
       <CrewLineup />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 mt-8">
-
-        {/* Current Teams */}
+        {/* Purchasable Teams */}
         <div className="mb-16">
           <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-accent inline-block" />
             当前可雇佣
           </h2>
 
+          {purchasableTeams.length === 0 && (
+            <p className="text-text-muted text-sm">暂无可用团队，敬请期待</p>
+          )}
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {currentTeams.map((team) => (
+            {purchasableTeams.map((team) => (
               <div
-                key={team.name}
+                key={team.id}
                 className="rounded-xl bg-surface border border-white/5 p-8 hover:border-primary/30 transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white">{team.name}</h3>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{team.label}</h3>
+                    <p className="text-sm text-text-muted mt-1">{team.subtitle}</p>
+                  </div>
                   <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent">
-                    {team.status}
+                    {team.badge}
                   </span>
                 </div>
-                <p className="text-text-secondary mb-6">{team.desc}</p>
 
                 <h4 className="text-sm font-semibold text-white mb-3">团队角色</h4>
                 <div className="space-y-3 mb-6">
-                  {team.roles.map((role) => (
-                    <div key={role.name} className="flex items-start gap-3">
+                  {team.members.map((member) => (
+                    <div key={member.id} className="flex items-start gap-3">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                       <div>
-                        <span className="text-white text-sm font-medium">{role.name}</span>
-                        <span className="text-text-secondary text-sm ml-2">{role.desc}</span>
+                        <span className="text-white text-sm font-medium">{member.name}</span>
+                        <span className="text-text-secondary text-sm"> — {member.role}</span>
+                        <p className="text-xs text-text-muted mt-0.5">{member.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -65,7 +56,7 @@ export default function TeamsPage() {
 
                 <div className="pt-4 border-t border-white/5">
                   <p className="text-xs text-text-muted">
-                    🛠️ 可定制：{team.customizable}
+                    角色数量和细分方向均可按需定制
                   </p>
                 </div>
               </div>
@@ -74,24 +65,36 @@ export default function TeamsPage() {
         </div>
 
         {/* Upcoming */}
-        <div>
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-warning inline-block" />
-            即将上线
-          </h2>
+        {upcomingTeams.length > 0 && (
+          <div>
+            <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-warning inline-block" />
+              即将上线
+            </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {upcomingTeams.map((team) => (
-              <div
-                key={team.name}
-                className="rounded-xl bg-surface border border-white/5 p-6 opacity-60"
-              >
-                <h3 className="text-white font-semibold mb-2">{team.name}</h3>
-                <p className="text-sm text-text-secondary">{team.desc}</p>
-              </div>
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {upcomingTeams.map((team) => (
+                <div
+                  key={team.id}
+                  className="rounded-xl bg-surface border border-white/5 p-6 opacity-60"
+                >
+                  <h3 className="text-white font-semibold mb-2">{team.label}</h3>
+                  <p className="text-sm text-text-secondary">{team.subtitle}</p>
+                  <div className="flex items-center gap-1 mt-4">
+                    {team.members.map((m) => (
+                      <span key={m.id} className="text-lg text-white/15">
+                        ?
+                      </span>
+                    ))}
+                    <span className="text-xs text-text-muted ml-2">
+                      {team.members.length} 个角色即将揭晓
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* CTA */}
         <div className="text-center mt-16">
