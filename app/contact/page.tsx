@@ -44,7 +44,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <div className="text-sm leading-relaxed">
-                    扫码添加掌柜，统一对外客服<br />
+                    微信扫码添加掌柜的，咨询任何问题<br />
                     <span className="text-text-muted text-xs">（添加后由 AI 客服接待）</span>
                   </div>
                   <Image

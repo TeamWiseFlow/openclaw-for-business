@@ -117,7 +117,7 @@ export const allCrewTeams: CrewTeam[] = [
     label: "品牌自媒体运营",
     subtitle: "内容创作 + 视觉设计 + 视频制作，全栈式品牌内容输出",
     badge: "可雇佣",
-    members: [mediaOperator, designer, videoProducer],
+    members: [designer, mediaOperator, videoProducer],
   },
   {
     id: "finance-strategy",

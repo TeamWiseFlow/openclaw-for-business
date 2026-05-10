@@ -1,12 +1,12 @@
 // 自媒体矩阵页
 export default function MediaPage() {
   const platforms = [
-    { name: "微信公众号", icon: "💬", link: "#", desc: "产品动态、行业洞察" },
-    { name: "小红书", icon: "📕", link: "#", desc: "AI 应用分享、搞钱思路" },
-    { name: "抖音", icon: "🎵", link: "#", desc: "短视频讲解、产品演示" },
-    { name: "B站", icon: "📺", link: "#", desc: "深度教程、技术分享" },
-    { name: "知乎", icon: "💡", link: "#", desc: "专业问答、行业分析" },
-    { name: "Twitter / X", icon: "🐦", link: "#", desc: "英文社区互动" },
+    { name: "微信公众号", handle: "无空归来", icon: "💬", link: "#", desc: "产品动态、行业洞察" },
+    { name: "小红书", handle: "大兄弟666", icon: "📕", link: "https://www.xiaohongshu.com/user/profile/大兄弟666", desc: "AI 应用分享、搞钱思路" },
+    { name: "知乎", handle: "大兄弟666", icon: "💡", link: "https://www.zhihu.com/people/大兄弟666", desc: "专业问答、行业分析" },
+    { name: "B站", handle: "无空归来", icon: "📺", link: "https://space.bilibili.com/无空归来", desc: "深度教程、技术分享" },
+    { name: "抖音", handle: "Alice_amazing", icon: "🎵", link: "https://www.douyin.com/user/Alice_amazing", desc: "短视频讲解、产品演示" },
+    { name: "Twitter / X", handle: "@Shanghaibi31603", icon: "🐦", link: "https://twitter.com/Shanghaibi31603", desc: "英文社区互动" },
   ];
 
   return (
@@ -36,6 +36,7 @@ export default function MediaPage() {
               <h3 className="text-white font-semibold mb-1 group-hover:text-primary transition-colors">
                 {platform.name}
               </h3>
+              <p className="text-sm text-primary/70 mb-2">{platform.handle}</p>
               <p className="text-sm text-text-secondary">{platform.desc}</p>
             </a>
           ))}

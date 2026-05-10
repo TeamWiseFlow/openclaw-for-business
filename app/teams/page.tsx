@@ -54,11 +54,7 @@ export default function TeamsPage() {
                   ))}
                 </div>
 
-                <div className="pt-4 border-t border-white/5">
-                  <p className="text-xs text-text-muted">
-                    角色数量和细分方向均可按需定制
-                  </p>
-                </div>
+                <div className="pt-4 border-t border-white/5" />
               </div>
             ))}
           </div>

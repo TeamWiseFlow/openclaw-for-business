@@ -11,7 +11,7 @@ export default function CrewHero() {
       <div className="absolute inset-0 bg-[#080810]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_30%_at_50%_50%,rgba(99,102,241,0.10),transparent)]" />
 
-      <div className="relative max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
+      <div className="relative max-w-6xl mx-auto px-2 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-10">
           <div className="text-xs font-semibold uppercase tracking-[0.3em] text-white/25 mb-3">
@@ -26,7 +26,7 @@ export default function CrewHero() {
         </div>
 
         {/* Full-width lineup image */}
-        <div className="relative w-full mb-10" style={{ aspectRatio: "32/9" }}>
+        <div className="relative w-full mb-10 -mx-2 sm:mx-0" style={{ aspectRatio: "32/9" }}>
           <Image
             src="/crew/crew-lineup.webp"
             alt="AI 数字员工团队全家福"

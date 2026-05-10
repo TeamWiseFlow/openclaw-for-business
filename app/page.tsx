@@ -17,7 +17,7 @@ export default function Home() {
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto animate-fade-in-up-delay-1">
-            基于 GitHub 8.2K star 多智能体项目 wiseflow
+            基于 GitHub 上备受关注的多智能体项目 wiseflow
           </p>
           <div className="flex justify-center animate-fade-in-up-delay-1">
             <GitHubStarsBadge />
