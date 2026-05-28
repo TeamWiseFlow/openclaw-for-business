@@ -56,7 +56,7 @@ export default function MediaPage() {
               </a>
 
               <a
-                href="https://www.zhihu.com/people/大兄弟666"
+                href="https://www.zhihu.com/people/lingzezhao"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex-1 flex items-center gap-4 p-6 rounded-xl bg-surface border border-white/5 hover:border-primary/30 transition-all"
@@ -68,7 +68,7 @@ export default function MediaPage() {
                 </div>
                 <div>
                   <span className="text-sm font-semibold text-white group-hover:text-primary transition-colors">知乎</span>
-                  <p className="text-xs text-text-muted mt-0.5">大兄弟666</p>
+                  <p className="text-xs text-text-muted mt-0.5">lingzezhao</p>
                 </div>
               </a>
             </div>

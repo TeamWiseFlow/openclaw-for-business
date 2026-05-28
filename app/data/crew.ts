@@ -89,7 +89,7 @@ const designer: CrewMember = {
 const videoProducer: CrewMember = {
   id: "video-producer",
   name: "Video Producer",
-  role: "视频制作",
+  role: "视频制作师",
   desc: "脚本生成、配音、视频合成，四条制作线覆盖技术动画到宣传短片",
   image: "/crew/video-producer.webp",
   accentColor: "#6366F1",
@@ -100,21 +100,21 @@ const videoProducer: CrewMember = {
 export const allCrewTeams: CrewTeam[] = [
   {
     id: "support",
-    label: "内部支撑",
-    subtitle: "幕后基座，保障全链路稳定运行——每支对外团队自动配备，无需额外购买",
+    label: "内部支撑团队",
+    subtitle: "幕后基座，保障全链路稳定运行——每支团队自动配备，无需额外购买",
     badge: "标配",
-    members: [mainAgent, hrbp, itEngineer],
+    members: [hrbp, itEngineer],
   },
   {
     id: "acquisition",
-    label: "业务承载与转化",
-    subtitle: "线上BD + 商业情报获取 + 销售型客服",
+    label: "业务承载与转化团队",
+    subtitle: "从线上主动获客、商业情报获取到销售客服，不浪费任何一次商机",
     badge: "可雇佣",
     members: [bd, salesCs],
   },
   {
     id: "brand-media",
-    label: "自动化获客",
+    label: "自动化获客团队",
     subtitle: "从网站设计到全平台内容运营，以品牌推广与获客为中心",
     badge: "可雇佣",
     members: [designer, mediaOperator, videoProducer],
@@ -134,12 +134,12 @@ export const allCrewTeams: CrewTeam[] = [
 
 /** 拉平取所有实际成员（不含神秘占位） */
 export const allRealCrew: CrewMember[] = [
-  mainAgent, hrbp, itEngineer,
+  hrbp, itEngineer,
   salesCs, bd,
   mediaOperator, designer, videoProducer,
 ];
 
-/** 内部支撑 crew */
-export const supportCrew = [mainAgent, hrbp, itEngineer];
+/** 内部支撑 crew（不含幕僚长，幕僚长形象预留给 IR 角色） */
+export const supportCrew = [hrbp, itEngineer];
 /** 前台业务 crew */
 export const businessCrew = [salesCs, bd, mediaOperator, designer, videoProducer];
