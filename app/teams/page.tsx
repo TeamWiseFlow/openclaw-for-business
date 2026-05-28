@@ -33,7 +33,7 @@ export default function TeamsPage() {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-white">{team.label}</h3>
-                    <p className="text-sm text-text-muted mt-1">{team.subtitle}</p>
+                    <p className="text-sm text-text-secondary mt-1">{team.subtitle}</p>
                   </div>
                   <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent">
                     {team.badge}

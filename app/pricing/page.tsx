@@ -9,7 +9,7 @@ export default function PricingPage() {
       price: "——",
       period: "待定",
       features: [
-        "1 支 AI 团队（自动化获客）",
+        "1 支 AI 团队（业务承载与转化）",
         "标准前台角色配置",
         "后台支撑团队全量包含",
         "基础运维保障",
