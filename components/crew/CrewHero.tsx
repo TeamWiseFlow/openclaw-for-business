@@ -8,8 +8,8 @@ export default function CrewHero() {
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Atmosphere */}
-      <div className="absolute inset-0 bg-[#080810]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_30%_at_50%_50%,rgba(99,102,241,0.10),transparent)]" />
+      <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_30%_at_50%_50%,rgba(255,119,89,0.06),transparent)]" />
 
       <div className="relative max-w-6xl mx-auto px-2 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -48,12 +48,12 @@ export default function CrewHero() {
                   ? "rgba(255,255,255,0.02)"
                   : team.badge === "标配"
                     ? "rgba(245,158,11,0.06)"
-                    : "rgba(99,102,241,0.06)",
+                    : "rgba(255,119,89,0.06)",
                 borderColor: team.upcoming
                   ? "rgba(255,255,255,0.06)"
                   : team.badge === "标配"
                     ? "rgba(245,158,11,0.15)"
-                    : "rgba(99,102,241,0.15)",
+                    : "rgba(255,119,89,0.15)",
               }}
             >
               <span
@@ -63,7 +63,7 @@ export default function CrewHero() {
                     ? "rgba(255,255,255,0.3)"
                     : team.badge === "标配"
                       ? "#F59E0B"
-                      : "#6366F1",
+                      : "#ff7759",
                 }}
               >
                 {team.label}

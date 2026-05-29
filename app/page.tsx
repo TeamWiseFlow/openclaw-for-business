@@ -93,7 +93,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="p-6 rounded-xl bg-[#0A0A0A] border border-white/5 hover:border-white/10 transition-all"
+                className="p-6 rounded-xl bg-background border border-white/5 hover:border-white/10 transition-all"
               >
                 <div className="text-3xl mb-4">{item.icon}</div>
                 <h3 className="text-white font-semibold mb-2">{item.title}</h3>

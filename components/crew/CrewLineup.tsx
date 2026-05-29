@@ -33,8 +33,8 @@ function MysteryCard({
             ? "0 0 32px rgba(120,113,108,0.25), 0 8px 24px rgba(0,0,0,0.5)"
             : "0 4px 12px rgba(0,0,0,0.3)",
           background: isActive
-            ? "linear-gradient(135deg, #1e1e28 0%, #14141c 100%)"
-            : "linear-gradient(135deg, #1a1a24 0%, #0d0d14 100%)",
+            ? "linear-gradient(135deg, #1a2b27 0%, #131f1c 100%)"
+            : "linear-gradient(135deg, #162420 0%, #0c1a17 100%)",
           opacity: isDimmed ? 0.4 : 1,
         }}
       >
@@ -110,7 +110,7 @@ function CrewCard({
           boxShadow: isActive
             ? `0 0 32px ${member.accentColor}30, 0 8px 24px rgba(0,0,0,0.5)`
             : "0 4px 12px rgba(0,0,0,0.3)",
-          background: "linear-gradient(180deg, #14141c 0%, #0a0a10 100%)",
+          background: "linear-gradient(180deg, #131f1c 0%, #0c1a17 100%)",
           opacity: isDimmed ? 0.4 : 1,
         }}
       >
@@ -136,7 +136,7 @@ function CrewCard({
           </div>
         )}
 
-        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0a0a10] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
 
         <div
           className="absolute bottom-0 left-0 right-0 h-0.5 transition-opacity duration-300"
@@ -181,8 +181,8 @@ function TeamRow({
             className="px-2 py-0.5 rounded text-[10px] font-medium"
             style={{
               background:
-                team.badge === "标配" ? "rgba(245,158,11,0.12)" : "rgba(99,102,241,0.12)",
-              color: team.badge === "标配" ? "#F59E0B" : "#6366F1",
+                team.badge === "标配" ? "rgba(245,158,11,0.12)" : "rgba(255,119,89,0.12)",
+              color: team.badge === "标配" ? "#F59E0B" : "#ff7759",
             }}
           >
             {team.badge}
@@ -235,8 +235,8 @@ export default function CrewLineup() {
 
   return (
     <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-[#080810]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_60%,rgba(99,102,241,0.08),transparent)]" />
+      <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_60%,rgba(255,119,89,0.05),transparent)]" />
 
       <div className="relative max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
         {/* Section header */}
