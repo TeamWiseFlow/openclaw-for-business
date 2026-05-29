@@ -26,21 +26,19 @@ export default function TeamsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {purchasableTeams.map((team) => (
-              <div
+              <Link
                 key={team.id}
-                className="rounded-xl bg-surface border border-white/5 p-8 hover:border-primary/30 transition-all"
+                href="/contact"
+                className="block rounded-xl bg-surface border border-white/5 p-8 hover:border-primary/30 transition-all"
               >
                 <div className="flex items-start gap-3 mb-4">
                   <div className="flex-1 min-w-0">
                     <h3 className="text-2xl font-bold text-white">{team.label}</h3>
                     <p className="text-base text-white/60 mt-1">{team.subtitle}</p>
                   </div>
-                  <Link
-                    href="/contact"
-                    className="shrink-0 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent whitespace-nowrap hover:bg-accent/20 transition-colors"
-                  >
+                  <span className="shrink-0 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent whitespace-nowrap">
                     {team.badge}
-                  </Link>
+                  </span>
                 </div>
 
                 <h4 className="text-sm font-semibold text-white mb-3">团队角色</h4>
@@ -58,7 +56,7 @@ export default function TeamsPage() {
                 </div>
 
                 <div className="pt-4 border-t border-white/5" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
