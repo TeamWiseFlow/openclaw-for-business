@@ -175,10 +175,10 @@ function TeamRow({
     <div className="mb-8">
       {/* Team header — centered */}
       <div className="flex items-center justify-center gap-3 mb-4">
-        <h3 className="text-sm font-semibold text-white/80">{team.label}</h3>
+        <h3 className="text-base font-semibold text-white/80">{team.label}</h3>
         {team.badge && (
           <span
-            className="px-2 py-0.5 rounded text-[10px] font-medium"
+            className="px-2 py-0.5 rounded text-xs font-medium"
             style={{
               background:
                 team.badge === "标配" ? "rgba(245,158,11,0.12)" : "rgba(255,119,89,0.12)",
@@ -189,15 +189,15 @@ function TeamRow({
           </span>
         )}
         {team.upcoming && (
-          <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-white/5 text-white/25">
+          <span className="px-2 py-0.5 rounded text-xs font-medium bg-white/5 text-white/25">
             即将上线
           </span>
         )}
-        <span className="text-[11px] text-white/20 hidden sm:inline">{team.subtitle}</span>
+        <span className="text-xs text-white/45 hidden sm:inline">{team.subtitle}</span>
       </div>
 
       {/* Subtitle on its own line for mobile */}
-      <p className="text-[11px] text-white/20 text-center mb-4 sm:hidden">{team.subtitle}</p>
+      <p className="text-xs text-white/45 text-center mb-4 sm:hidden">{team.subtitle}</p>
 
       {/* Cards row — centered */}
       <div className="flex gap-3 sm:gap-4 justify-center">
@@ -241,13 +241,13 @@ export default function CrewLineup() {
       <div className="relative max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
         {/* Section header */}
         <div className="text-center mb-12">
-          <div className="text-xs font-semibold uppercase tracking-[0.3em] text-white/25 mb-3">
+          <div className="text-sm font-semibold uppercase tracking-[0.3em] text-white/40 mb-3">
             你的 AI 员工
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             认识你的团队
           </h2>
-          <p className="text-white/35 text-sm max-w-xl mx-auto">
+          <p className="text-white/55 text-base max-w-xl mx-auto">
             幕后基座 + 前台战队，灵活组合，按需配置
           </p>
         </div>

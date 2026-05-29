@@ -32,8 +32,8 @@ export default function TeamsPage() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white">{team.label}</h3>
-                    <p className="text-sm text-text-secondary mt-1">{team.subtitle}</p>
+                    <h3 className="text-2xl font-bold text-white">{team.label}</h3>
+                    <p className="text-base text-white/60 mt-1">{team.subtitle}</p>
                   </div>
                   <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent">
                     {team.badge}
@@ -74,8 +74,8 @@ export default function TeamsPage() {
                   key={team.id}
                   className="rounded-xl bg-surface border border-white/5 p-6 opacity-60"
                 >
-                  <h3 className="text-white font-semibold mb-2">{team.label}</h3>
-                  <p className="text-sm text-text-secondary">{team.subtitle}</p>
+                  <h3 className="text-lg text-white font-semibold mb-2">{team.label}</h3>
+                  <p className="text-sm text-white/50">{team.subtitle}</p>
                   <div className="flex items-center gap-1 mt-4">
                     {team.members.map((m) => (
                       <span key={m.id} className="text-lg text-white/15">
