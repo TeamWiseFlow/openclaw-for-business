@@ -35,9 +35,12 @@ export default function TeamsPage() {
                     <h3 className="text-2xl font-bold text-white">{team.label}</h3>
                     <p className="text-base text-white/60 mt-1">{team.subtitle}</p>
                   </div>
-                  <span className="shrink-0 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent whitespace-nowrap">
+                  <Link
+                    href="/contact"
+                    className="shrink-0 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent whitespace-nowrap hover:bg-accent/20 transition-colors"
+                  >
                     {team.badge}
-                  </span>
+                  </Link>
                 </div>
 
                 <h4 className="text-sm font-semibold text-white mb-3">团队角色</h4>

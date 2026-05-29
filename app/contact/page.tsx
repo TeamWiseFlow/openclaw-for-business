@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 // 联系我们页
 export default function ContactPage() {
@@ -12,6 +13,12 @@ export default function ContactPage() {
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
             聊聊您的业务需求，我们帮您定制最合适的 AI 数字员工团队方案
+          </p>
+          <p className="text-base text-primary/80 max-w-2xl mx-auto mt-3 leading-relaxed">
+            线上自助开通 AI 团队功能正在紧急开发中，目前如有需求，欢迎扫描下方掌柜企业微信二维码沟通。或者欢迎使用我们的
+            <Link href="https://github.com/TeamWiseFlow/wiseflow" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">开源版本</Link>
+            自行部署（完全免费），
+            <Link href="https://atomgit.com/wiseflow/wiseflow" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">国内镜像</Link>
           </p>
         </div>
 
