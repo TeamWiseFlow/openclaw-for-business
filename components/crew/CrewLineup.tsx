@@ -171,10 +171,12 @@ function TeamRow({
   onHover: (id: string) => void;
   onLeave: () => void;
 }) {
+  const activeMember = team.members.find((m) => m.id === activeId);
+
   return (
     <div className="mb-8">
       {/* Team header — centered */}
-      <div className="flex items-center justify-center gap-3 mb-4">
+      <div className="flex items-center justify-center gap-3 mb-2">
         <h3 className="text-base font-semibold text-white/80">{team.label}</h3>
         {team.badge && (
           <span
@@ -197,7 +199,20 @@ function TeamRow({
       </div>
 
       {/* Subtitle on its own line for mobile */}
-      <p className="text-xs text-white/45 text-center mb-4 sm:hidden">{team.subtitle}</p>
+      <p className="text-xs text-white/45 text-center mb-2 sm:hidden">{team.subtitle}</p>
+
+      {/* Hover description for this team */}
+      <div className="h-6 flex items-center justify-center mb-2">
+        <p
+          className="text-xs sm:text-sm text-center transition-all duration-300"
+          style={{
+            color: activeMember?.accentColor ?? "transparent",
+            opacity: activeMember ? 1 : 0,
+          }}
+        >
+          {activeMember?.desc}
+        </p>
+      </div>
 
       {/* Cards row — centered */}
       <div className="flex gap-3 sm:gap-4 justify-center">
@@ -230,9 +245,6 @@ function TeamRow({
 export default function CrewLineup() {
   const [activeId, setActiveId] = useState<string | null>(null);
 
-  const allMembers = allCrewTeams.flatMap((t) => t.members);
-  const activeMember = allMembers.find((m) => m.id === activeId);
-
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-background" />
@@ -249,20 +261,6 @@ export default function CrewLineup() {
           </h2>
           <p className="text-white/55 text-base max-w-xl mx-auto">
             幕后基座 + 前台战队，灵活组合，按需配置
-          </p>
-        </div>
-
-        {/* Active member description bar */}
-        <div className="h-8 flex items-center justify-center mb-4">
-          <p
-            className="text-xs sm:text-sm text-center transition-all duration-300"
-            style={{
-              color: activeMember?.accentColor ?? "transparent",
-              opacity: activeMember ? 1 : 0,
-              transform: activeMember ? "translateY(0)" : "translateY(2px)",
-            }}
-          >
-            {activeMember?.desc}
           </p>
         </div>
 

@@ -30,12 +30,12 @@ export default function TeamsPage() {
                 key={team.id}
                 className="rounded-xl bg-surface border border-white/5 p-8 hover:border-primary/30 transition-all"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="flex-1 min-w-0">
                     <h3 className="text-2xl font-bold text-white">{team.label}</h3>
                     <p className="text-base text-white/60 mt-1">{team.subtitle}</p>
                   </div>
-                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent">
+                  <span className="shrink-0 px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent whitespace-nowrap">
                     {team.badge}
                   </span>
                 </div>

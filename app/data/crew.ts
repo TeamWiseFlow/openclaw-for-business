@@ -122,7 +122,7 @@ export const allCrewTeams: CrewTeam[] = [
   {
     id: "finance-strategy",
     label: "CFO 团队",
-    subtitle: "智能分析+精准决策，让每一分钱都花在刀刃上",
+    subtitle: "智能分析+精准决策+早期风险识别，让每一分钱都花在刀刃上",
     upcoming: true,
     members: [
       { id: "fs-mystery-1", name: "???", role: "即将揭晓", desc: "", image: "", accentColor: "#78716C" },
