@@ -16,7 +16,7 @@ export default function Home() {
           </h1>
 
           <p className="mt-6 text-base sm:text-lg text-text-secondary max-w-2xl mx-auto animate-fade-in-up-delay-1">
-            Wiseflow — 基于 OpenClaw 的 Multi-Agent（多智能体）系统，专为创业起步期打造。
+            Wiseflow — 基于 OpenClaw 的 Multi-Agent（多智能体）系统，<br />专为创业起步期打造。
           </p>
           <div className="flex justify-center animate-fade-in-up-delay-1">
             <GitHubStarsBadge />
@@ -47,10 +47,7 @@ export default function Home() {
               创业者的<strong className="text-primary">第一支团队</strong>
             </h2>
             <p className="text-text-secondary text-lg leading-relaxed">
-              创业起步，最难的从来不是没有方向——而是那些<strong>不得不做、但又不性感的事</strong>：写稿、发内容、找客户、回咨询、搞设计、商业调研、信息搜集、财务报税、做ppt……
-            </p>
-            <p className="text-text-secondary text-lg leading-relaxed mt-4">
-              这些事每一件都不能少，但每一件都在消耗你最宝贵的时间和心力。
+              创业起步，最难的从来不是没有方向——而是那些<strong>不得不做、但又不性感的事</strong>：写稿、发内容、找客户、回咨询、搞设计、商业调研、信息搜集、财务报税、做ppt……这些事每一件都不能少，但每一件都在消耗你最宝贵的时间和心力。
             </p>
             <p className="text-text-secondary text-lg leading-relaxed mt-4">
               Wiseflow 给你一支 <strong>7×24 在线的 AI 团队</strong>，替你扛起这一切。你，只管去追逐那星辰大海！
