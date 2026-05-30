@@ -12,7 +12,7 @@ export default function ContactPage() {
             联系我们
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            聊聊您的业务需求，我们帮您定制最合适的 AI 数字员工团队方案
+            聊聊你的业务，我们帮你定制最合适的 AI 团队方案
           </p>
           <p className="text-base text-primary/80 max-w-2xl mx-auto mt-3 leading-relaxed">
             线上自助开通 AI 团队功能正在紧急开发中，目前如有需求，欢迎扫描下方掌柜企业微信二维码沟通。或者欢迎使用我们的

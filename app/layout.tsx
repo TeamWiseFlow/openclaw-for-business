@@ -15,8 +15,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "OpenClaw for Business — 雇佣 AI 数字员工团队",
-  description: "基于 GitHub 8.2K star 多智能体项目 wiseflow，为企业打造 7×24 小时自动化运营团队。",
+  title: "OpenClaw for Business — 你的第一支 AI 团队",
+  description: "Wiseflow — 基于 OpenClaw 的多智能体系统，专为创业起步期打造。",
 };
 
 export default function RootLayout({

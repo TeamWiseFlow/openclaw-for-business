@@ -9,7 +9,7 @@ export default function CasesPage() {
             客户案例
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            看看企业如何通过 AI 数字员工团队实现业务增长
+            看看创业者如何用 AI 团队从 0 到 1
           </p>
         </div>
 

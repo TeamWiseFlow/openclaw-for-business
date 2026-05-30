@@ -12,12 +12,12 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight animate-fade-in-up">
-            雇佣一支 7×24 小时<br />
-            为你盈利的 AI 数字员工团队
+            你的第一支团队，<br />
+            何必是人类
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto animate-fade-in-up-delay-1">
-            基于 GitHub 上备受关注的多智能体项目 wiseflow
+            Wiseflow — 基于 OpenClaw 的 Multi-Agent（多智能体）系统，专为创业起步期打造。
           </p>
           <div className="flex justify-center animate-fade-in-up-delay-1">
             <GitHubStarsBadge />
@@ -45,12 +45,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              不是买软件，而是<strong className="text-primary">雇佣团队</strong>
+              创业者的<strong className="text-primary">第一支团队</strong>
             </h2>
             <p className="text-text-secondary text-lg leading-relaxed">
-              OpenClaw for Business 为您提供完整的 AI 数字员工托管服务。
-              我们部署、运维、保障您的 AI 团队 7×24 小时运转——
-              从内容引流到销售转化，全流程自动化，无需任何技术背景。
+              创业起步，最难的从来不是没有方向——而是那些<strong>不得不做、但最不性感的事</strong>：写稿、发内容、找客户、回咨询、搞设计、盯财税……
+            </p>
+            <p className="text-text-secondary text-lg leading-relaxed mt-4">
+              这些事每一件都不能少，但每一件都在消耗你最宝贵的时间和心力。
+            </p>
+            <p className="text-text-secondary text-lg leading-relaxed mt-4">
+              Wiseflow 给你一支 <strong>7×24 在线的 AI 团队</strong>，替你扛起这一切。而你，只管去做那件<strong>只有你才能做的事</strong>。
             </p>
           </div>
         </div>
@@ -64,31 +68,31 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              为什么选择我们
+              创业者的第一支团队，为什么可以交给 AI
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               {
-                title: "7×24 全天候",
-                desc: "AI 团队不间断运转，白天黑夜持续为您服务",
-                icon: "🕐",
+                title: "告别孤军奋战",
+                desc: "创业者是世界上最孤独的群体。缺钱、缺人、缺影响力，一个人扛着所有事，失败率还高得吓人。现在你有了第一支 AI 团队——不请假、不摸鱼、不离职，7×24 在线替你扛。",
+                icon: "🛡️",
               },
               {
-                title: "自主协作",
-                desc: "多智能体自主互助，遇问题自动调用 IT 排查修复",
-                icon: "🧠",
+                title: "聚焦只有你能做的事",
+                desc: "写稿、发内容、找客户、回咨询、搞设计……这些事情非做不可，但不该由你做。AI 团队全包了。你去思考方向、打磨产品、追逐星辰大海。",
+                icon: "🎯",
               },
               {
-                title: "开箱即用",
-                desc: "无需技术背景，我们托管一切——部署、运维、保障",
+                title: "更低成本，更快试错",
+                desc: "有一个想法？告诉 AI，它替你快速落地、跑数据、收集反馈。行就加码，不行就换——创业的本质就是试错，AI 让你的试错成本降到极致。",
                 icon: "🚀",
               },
               {
-                title: "按需定制",
-                desc: "前台角色灵活配置，匹配您的业务需求",
-                icon: "⚡",
+                title: "承诺永远开源免费",
+                desc: "你不需要先花一大笔钱才能开始。开源版永久免费，随时可用。我们不追求你永远用下去——等你发展到 100 人、上亿销售额，自然会有更适合的产品。我们只服务起步时最难的这一段。",
+                icon: "🔓",
               },
             ].map((item) => (
               <div
@@ -110,10 +114,10 @@ export default function Home() {
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-6 sm:px-16 lg:px-24 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            准备好为您的业务组建 AI 团队了吗？
+            准备好拥有你的第一支团队了吗？
           </h2>
           <p className="text-text-secondary text-lg mb-8">
-            联系我们，了解如何定制最适合您的 AI 数字员工团队
+            先试试开源版，零成本体验你的第一支 AI 团队。需要托管服务？也可以联系我们。
           </p>
           <Link
             href="/contact"
