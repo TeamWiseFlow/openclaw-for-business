@@ -14,7 +14,7 @@ export default function CrewHero() {
       <div className="relative max-w-6xl mx-auto px-2 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-10">
-          <div className="text-xs font-semibold uppercase tracking-[0.3em] text-white/25 mb-3">
+          <div className="text-sm font-semibold uppercase tracking-[0.3em] text-white/25 mb-3">
             你的 AI 员工
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
