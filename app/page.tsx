@@ -46,7 +46,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               创业者的<strong className="text-primary">第一支团队</strong>
             </h2>
-            <p className="text-text-secondary text-lg leading-relaxed">
+            <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
               创业起步，最难的从来不是没有方向——而是那些<strong>不得不做、但又不性感的事</strong>：写稿、发内容、找客户、回咨询、搞设计、商业调研、信息搜集、财务报税、做ppt……这些事每一件都不能少，但每一件都在消耗你最宝贵的时间和心力。
             </p>
             <p className="text-text-secondary text-lg leading-relaxed mt-4">
