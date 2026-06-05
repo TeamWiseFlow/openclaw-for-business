@@ -112,8 +112,8 @@ export default function Home() {
       {/* CTA */}
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-6 sm:px-16 lg:px-24 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            <span className="whitespace-nowrap">准备好拥有你的第一支 AI 团队</span><span className="whitespace-nowrap">了吗？</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-balance">
+            准备好拥有你的第一支 AI 团队了吗？
           </h2>
           <p className="text-text-secondary text-lg mb-8">
             开源版永久免费，零成本即可开始。需要托管服务或更多功能？也可以联系我们。
