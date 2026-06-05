@@ -4,82 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { allCrewTeams, CrewMember, CrewTeam } from "@/app/data/crew";
 
-function MysteryCard({
-  member,
-  isActive,
-  isDimmed,
-  onHover,
-  onLeave,
-}: {
-  member: CrewMember;
-  isActive: boolean;
-  isDimmed: boolean;
-  onHover: () => void;
-  onLeave: () => void;
-}) {
-  return (
-    <div
-      className="flex-shrink-0 w-36 sm:w-44 cursor-pointer select-none"
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
-    >
-      <div
-        className="relative rounded-lg overflow-hidden border transition-all duration-300"
-        style={{
-          aspectRatio: "2 / 3",
-          borderColor: isActive ? "rgba(120,113,108,0.4)" : "rgba(255,255,255,0.06)",
-          transform: isActive ? "scale(1.05) translateY(-4px)" : "scale(1)",
-          boxShadow: isActive
-            ? "0 0 32px rgba(120,113,108,0.25), 0 8px 24px rgba(0,0,0,0.5)"
-            : "0 4px 12px rgba(0,0,0,0.3)",
-          background: isActive
-            ? "linear-gradient(135deg, #1a2b27 0%, #131f1c 100%)"
-            : "linear-gradient(135deg, #162420 0%, #0c1a17 100%)",
-          opacity: isDimmed ? 0.4 : 1,
-        }}
-      >
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-          <span
-            className="text-4xl sm:text-5xl font-bold transition-all duration-300"
-            style={{ color: isActive ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)" }}
-          >
-            ?
-          </span>
-          <span
-            className="text-xs transition-all duration-300"
-            style={{ color: isActive ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.2)" }}
-          >
-            即将揭晓
-          </span>
-        </div>
-
-        {/* Accent glow */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-0.5 transition-opacity duration-300"
-          style={{
-            background: "linear-gradient(90deg, transparent, rgba(120,113,108,0.5), transparent)",
-            opacity: isActive ? 1 : 0,
-          }}
-        />
-      </div>
-      <div className="text-center mt-2">
-        <div
-          className="text-xs font-bold tracking-wide transition-colors duration-300"
-          style={{ color: isActive ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.2)" }}
-        >
-          ???
-        </div>
-        <div
-          className="text-[10px] transition-colors duration-300"
-          style={{ color: isActive ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)" }}
-        >
-          即将揭晓
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function CrewCard({
   member,
   isActive,
@@ -111,9 +35,16 @@ function CrewCard({
             ? `0 0 32px ${member.accentColor}30, 0 8px 24px rgba(0,0,0,0.5)`
             : "0 4px 12px rgba(0,0,0,0.3)",
           background: "linear-gradient(180deg, #131f1c 0%, #0c1a17 100%)",
-          opacity: isDimmed ? 0.4 : 1,
+          opacity: isDimmed ? 0.4 : member.upcoming ? 0.7 : 1,
         }}
       >
+        {/* 即将发布角标 */}
+        {member.upcoming && (
+          <div className="absolute top-2 right-2 z-10 px-1.5 py-0.5 rounded text-[9px] font-medium bg-white/10 text-white/40 backdrop-blur-sm">
+            即将发布
+          </div>
+        )}
+
         {!imgError && member.image ? (
           <Image
             src={member.image}
@@ -190,11 +121,6 @@ function TeamRow({
             {team.badge}
           </span>
         )}
-        {team.upcoming && (
-          <span className="px-2 py-0.5 rounded text-xs font-medium bg-white/5 text-white/25">
-            即将上线
-          </span>
-        )}
         <span className="text-xs text-white/45 hidden sm:inline">{team.subtitle}</span>
       </div>
 
@@ -217,25 +143,14 @@ function TeamRow({
       {/* Cards row — centered */}
       <div className="flex gap-3 sm:gap-4 justify-center">
         {team.members.map((member) => (
-          team.upcoming ? (
-            <MysteryCard
-              key={member.id}
-              member={member}
-              isActive={activeId === member.id}
-              isDimmed={activeId !== null && activeId !== member.id}
-              onHover={() => onHover(member.id)}
-              onLeave={onLeave}
-            />
-          ) : (
-            <CrewCard
-              key={member.id}
-              member={member}
-              isActive={activeId === member.id}
-              isDimmed={activeId !== null && activeId !== member.id}
-              onHover={() => onHover(member.id)}
-              onLeave={onLeave}
-            />
-          )
+          <CrewCard
+            key={member.id}
+            member={member}
+            isActive={activeId === member.id}
+            isDimmed={activeId !== null && activeId !== member.id}
+            onHover={() => onHover(member.id)}
+            onLeave={onLeave}
+          />
         ))}
       </div>
     </div>
@@ -254,7 +169,7 @@ export default function CrewLineup() {
         {/* Section header */}
         <div className="text-center mb-12">
           <div className="text-sm font-semibold uppercase tracking-[0.3em] text-white/40 mb-3">
-            你的 AI 员工
+            你的 AI 团队
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             认识你的团队

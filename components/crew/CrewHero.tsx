@@ -15,7 +15,7 @@ export default function CrewHero() {
         {/* Section header */}
         <div className="text-center mb-10">
           <div className="text-sm font-semibold uppercase tracking-[0.3em] text-white/25 mb-3">
-            你的 AI 员工
+            你的 AI 团队
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             认识你的团队
@@ -29,7 +29,7 @@ export default function CrewHero() {
         <div className="relative w-full mb-10 -mx-2 sm:mx-0" style={{ aspectRatio: "32/9" }}>
           <Image
             src="/crew/crew-lineup.webp"
-            alt="AI 数字员工团队全家福"
+            alt="AI 团队全家福"
             fill
             className="object-contain"
             priority
@@ -44,26 +44,18 @@ export default function CrewHero() {
               key={team.id}
               className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs border"
               style={{
-                background: team.upcoming
-                  ? "rgba(255,255,255,0.02)"
-                  : team.badge === "标配"
-                    ? "rgba(245,158,11,0.06)"
-                    : "rgba(255,119,89,0.06)",
-                borderColor: team.upcoming
-                  ? "rgba(255,255,255,0.06)"
-                  : team.badge === "标配"
-                    ? "rgba(245,158,11,0.15)"
-                    : "rgba(255,119,89,0.15)",
+                background: team.badge === "标配"
+                  ? "rgba(245,158,11,0.06)"
+                  : "rgba(255,119,89,0.06)",
+                borderColor: team.badge === "标配"
+                  ? "rgba(245,158,11,0.15)"
+                  : "rgba(255,119,89,0.15)",
               }}
             >
               <span
                 className="font-medium"
                 style={{
-                  color: team.upcoming
-                    ? "rgba(255,255,255,0.3)"
-                    : team.badge === "标配"
-                      ? "#F59E0B"
-                      : "#ff7759",
+                  color: team.badge === "标配" ? "#F59E0B" : "#ff7759",
                 }}
               >
                 {team.label}
@@ -81,7 +73,7 @@ export default function CrewHero() {
             href="/teams"
             className="inline-block px-6 py-2.5 rounded-full border border-white/10 text-sm text-white/60 hover:text-white hover:border-white/25 transition-all"
           >
-            详细了解每位 AI 员工 →
+            详细了解每位 AI 团队成员 →
           </Link>
         </div>
       </div>

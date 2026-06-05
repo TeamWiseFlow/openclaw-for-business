@@ -26,7 +26,7 @@ export default function PricingPage() {
       price: "¥0",
       period: "",
       features: [
-        "6 个 AI Crew 全量可用（BD / 自媒体运营 / IR / 销售客服 / 设计师 / 财税专员*）",
+        "7 个 AI Crew 全量可用（商务拓展 / 自媒体运营 / 销售客服 / 设计师 / HRBP / IT Engineer / 投资人关系*）",
         "完全开源，承诺永远免费",
         "社区支持（GitHub Discussion + 微信群）",
       ],
@@ -36,7 +36,7 @@ export default function PricingPage() {
       highlighted: true,
       footnotes: [
         "*开源版软件免费，需自行准备硬件、大模型调用费用及电费、网费等。",
-        "*财税专员即将发布。",
+        "*投资人关系即将发布。",
       ],
     },
     {

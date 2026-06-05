@@ -12,11 +12,11 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-16 lg:px-24 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight animate-fade-in-up">
-            你的第一支团队，何必是人类
+            你的第一支 AI 团队
           </h1>
 
           <p className="mt-6 text-base sm:text-lg text-text-secondary max-w-2xl mx-auto animate-fade-in-up-delay-1">
-            Wiseflow — 基于 OpenClaw 的 Multi-Agent（多智能体）系统，<br />专为创业起步期打造。
+            Wiseflow — 基于 OpenClaw 的 Multi-Agent 系统。<br className="hidden sm:inline" />开源免费，帮你把经验和方法跑成一门生意。
           </p>
           <div className="flex justify-center animate-fade-in-up-delay-1">
             <GitHubStarsBadge />
@@ -39,18 +39,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What is OFB */}
+      {/* 你专注方向，AI 负责执行 */}
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              创业者的<strong className="text-primary">第一支团队</strong>
+              你专注方向，<strong className="text-primary">AI 负责执行</strong>
             </h2>
             <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
-              创业起步，最难的从来不是没有方向——而是那些<strong>不得不做、但又不性感的事</strong>：写稿、发内容、找客户、回咨询、搞设计、商业调研、信息搜集、财务报税、做ppt……这些事每一件都不能少，但每一件都在消耗你最宝贵的时间和心力。
+              创业起步，最耗心力的往往不是战略和方向——而是那些必须做、却极其琐碎的事：写内容、发文章、找客户、回咨询、做设计、盯财税。
+            </p>
+            <p className="text-text-secondary text-base sm:text-lg leading-relaxed mt-4">
+              这些事情一件都不能少，但每一件都在消耗你最宝贵的时间。
             </p>
             <p className="text-text-secondary text-lg leading-relaxed mt-4">
-              Wiseflow 给你一支 <strong>7×24 在线的 AI 团队</strong>，替你扛起这一切。你，只管去追逐那星辰大海！
+              Wiseflow 为你提供一支 <strong>7×24 在线的 AI 团队</strong>，替你完成这些执行层的工作。而你，只需要做决策、定方向。
             </p>
           </div>
         </div>
@@ -59,12 +62,12 @@ export default function Home() {
       {/* Crew Lineup — full image hero */}
       <CrewHero />
 
-      {/* Why Choose Us */}
+      {/* Why Choose Wiseflow */}
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6 sm:px-16 lg:px-24">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              创业者的第一支团队，为什么可以交给 AI
+              为什么选择 Wiseflow
             </h2>
           </div>
 
@@ -72,22 +75,22 @@ export default function Home() {
             {[
               {
                 title: "告别孤军奋战",
-                desc: "创业者是世界上最孤独的群体。缺钱、缺人、缺影响力，一个人扛着所有事，失败率还高得吓人。现在你有了第一支 AI 团队——不请假、不摸鱼、不离职，7×24 在线替你扛。",
+                desc: "创业初期，缺人、缺钱、缺时间。Wiseflow 给你一支不请假、不离职的 AI 团队，7×24 在线，替你扛起执行层的工作。",
                 icon: "🛡️",
               },
               {
-                title: "聚焦只有你能做的事",
-                desc: "写稿、发内容、找客户、回咨询、财务报税、做ppt……这些事情非做不可，但不该由你做。AI 团队全包了。你去思考方向、打磨产品、追逐星辰大海。",
+                title: "聚焦核心决策",
+                desc: "写稿、找客户、做设计、回咨询——这些事 AI 团队全包了。你专注于思考方向、打磨产品、做只有你能做的决策。",
                 icon: "🎯",
               },
               {
-                title: "更低成本，更快试错",
-                desc: "有一个想法？告诉 AI，它替你多角度思考、快速落地、跑数据、收集反馈。行就加码，不行就换——创业的本质就是试错，AI 让你的试错成本降到极致。",
+                title: "零成本启动",
+                desc: "开源版永久免费。不需要先投入一大笔钱，现在就可以开始。有一个想法？告诉 AI，让它替你快速落地验证。",
                 icon: "🚀",
               },
               {
-                title: "承诺永远开源免费",
-                desc: "开源版永久免费，随时可用。我们不追求你永远用下去——等你发展到 100 人、千万销售额，自然会有更适合的产品。我们只服务起步时最难的这一段。",
+                title: "永远开源",
+                desc: "代码完全开放，社区驱动。你不必担心被锁定、被涨价。我们不追求你永远用下去——等你发展壮大，自然会有更适合的产品。",
                 icon: "🔓",
               },
             ].map((item) => (
@@ -110,10 +113,10 @@ export default function Home() {
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-6 sm:px-16 lg:px-24 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            准备好拥有你的第一支团队了吗？
+            准备好拥有你的第一支 AI 团队了吗？
           </h2>
           <p className="text-text-secondary text-lg mb-8">
-            先试试开源版，零成本体验。需要托管服务？也可以联系我们。
+            开源版永久免费，零成本即可开始。需要托管服务或更多功能？也可以联系我们。
           </p>
           <Link
             href="/contact"

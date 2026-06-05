@@ -9,7 +9,7 @@ export default function Footer() {
               <span className="text-primary">OFB</span> OpenClaw for Business
             </div>
             <p className="text-sm text-text-secondary leading-relaxed">
-              wiseflow — 你的第一支 AI 团队
+              Wiseflow — 让 AI 时代红利惠及每一个人。
             </p>
           </div>
 

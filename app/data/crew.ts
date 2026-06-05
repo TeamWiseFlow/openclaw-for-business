@@ -5,6 +5,8 @@ export interface CrewMember {
   desc: string;
   image: string;
   accentColor: string;
+  /** 即将发布的角色，显示「即将发布」角标 */
+  upcoming?: boolean;
 }
 
 export interface CrewTeam {
@@ -12,21 +14,10 @@ export interface CrewTeam {
   label: string;
   subtitle: string;
   badge?: string;
-  /** 如果是即将上线的团队，成员用占位 ? 卡片 */
-  upcoming?: boolean;
   members: CrewMember[];
 }
 
 // --- 内部支撑（标配，启用自带，无需购买） ---
-
-const mainAgent: CrewMember = {
-  id: "main-agent",
-  name: "Main Agent",
-  role: "幕僚长",
-  desc: "对内 crew 的神经中枢，任务路由分发、生命周期管理，执行兜底任务",
-  image: "/crew/main-agent.webp",
-  accentColor: "#F59E0B",
-};
 
 const hrbp: CrewMember = {
   id: "hrbp",
@@ -46,53 +37,75 @@ const itEngineer: CrewMember = {
   accentColor: "#3B82F6",
 };
 
-// --- 业务承载与转化团队 ---
-
-const salesCs: CrewMember = {
-  id: "sales-cs",
-  name: "Sales CS",
-  role: "销售客服",
-  desc: "售前咨询、产品答疑、购买引导、客户画像维护，推动成交转化",
-  image: "/crew/sales-cs.webp",
-  accentColor: "#F97316",
-};
+// --- 自动化获客团队 ---
 
 const bd: CrewMember = {
   id: "bd",
-  name: "BD",
+  name: "Business Developer",
   role: "商务拓展",
-  desc: "潜在客户探索（全平台主动发现商机）、商业情报采集（竞对/政策监控）、商务材料制作（PPT/方案书/社交线索等）",
+  desc: "人脉分析、批量触达、主动开拓新客户",
   image: "/crew/bd.webp",
   accentColor: "#8B5CF6",
 };
 
-// --- 自动化获客团队 ---
-
 const mediaOperator: CrewMember = {
   id: "media-operator",
-  name: "自媒体运营",
-  role: "内容运营师",
-  desc: "内容创作、多平台自动发布、引流转化，驱动业务的内容营销",
+  name: "Selfmedia Operator",
+  role: "自媒体运营",
+  desc: "内容创作、多平台自动发布、引流转化",
   image: "/crew/social-media.webp",
   accentColor: "#EC4899",
-};
-
-const designer: CrewMember = {
-  id: "designer",
-  name: "Designer",
-  role: "设计体系构建师",
-  desc: "内置 15 套品牌设计系统（Stripe/Apple/BMW 等），一键匹配风格，从零构建完整网页、APP 界面与品牌视觉体系",
-  image: "/crew/designer.webp",
-  accentColor: "#06B6D4",
 };
 
 const videoProducer: CrewMember = {
   id: "video-producer",
   name: "Video Producer",
-  role: "视频制作师",
-  desc: "脚本生成、配音、视频合成，四条制作线覆盖技术动画到宣传短片",
+  role: "视频制作",
+  desc: "脚本生成、配音合成、视频剪辑合成",
   image: "/crew/video-producer.webp",
   accentColor: "#6366F1",
+};
+
+const salesCs: CrewMember = {
+  id: "sales-cs",
+  name: "Sales-CS",
+  role: "销售客服",
+  desc: "促进成交、管理客户信息、发起收款",
+  image: "/crew/sales-cs.webp",
+  accentColor: "#F97316",
+};
+
+// --- 保障与支撑团队 ---
+
+/** 投资人关系 — 复用原 Main Agent（幕僚长）形象 */
+const ir: CrewMember = {
+  id: "ir",
+  name: "IR",
+  role: "投资人关系",
+  desc: "商业模式优化、搜索投资人、生成 BP、项目申报、知识产权申报",
+  image: "/crew/main-agent.webp",
+  accentColor: "#F59E0B",
+  upcoming: true,
+};
+
+const designer: CrewMember = {
+  id: "designer",
+  name: "Designer",
+  role: "平面设计师",
+  desc: "品牌整体设计、网页/落地页原型设计、APP 界面设计",
+  image: "/crew/designer.webp",
+  accentColor: "#06B6D4",
+};
+
+/** 财税专员 — 即将发布 */
+const taxSpecialist: CrewMember = {
+  id: "tax-specialist",
+  name: "Tax Specialist",
+  role: "财税专员",
+  desc: "发票管理、税务申报、财务报表",
+  image: "/crew/tax-specialist.webp",
+  accentColor: "#DC2626",
+  upcoming: true,
 };
 
 // --- 团队列表 ---
@@ -107,39 +120,28 @@ export const allCrewTeams: CrewTeam[] = [
   },
   {
     id: "acquisition",
-    label: "业务承载与转化团队",
-    subtitle: "从线上主动获客、商业情报获取到销售客服，不浪费任何一次商机",
-    badge: "可雇佣",
-    members: [bd, salesCs],
-  },
-  {
-    id: "brand-media",
     label: "自动化获客团队",
-    subtitle: "从网站设计到全平台内容运营，以品牌推广与获客为中心",
+    subtitle: "从发现客户到促成成交，全流程自动化。你的 AI 团队 7×24 在线，替你跑通获客的每一步。",
     badge: "可雇佣",
-    members: [designer, mediaOperator, videoProducer],
+    members: [bd, mediaOperator, videoProducer, salesCs],
   },
   {
-    id: "finance-strategy",
-    label: "CFO 团队",
-    subtitle: "智能分析+精准决策+早期风险识别，让每一分钱都花在刀刃上",
-    upcoming: true,
-    members: [
-      { id: "fs-mystery-1", name: "???", role: "即将揭晓", desc: "", image: "", accentColor: "#78716C" },
-      { id: "fs-mystery-2", name: "???", role: "即将揭晓", desc: "", image: "", accentColor: "#78716C" },
-      { id: "fs-mystery-3", name: "???", role: "即将揭晓", desc: "", image: "", accentColor: "#78716C" },
-    ],
+    id: "support-team",
+    label: "保障与支撑团队",
+    subtitle: "让业务合规、让品牌出彩、让财务清晰。你的 AI 后勤团队，保障业务稳健运行。",
+    badge: "可雇佣",
+    members: [ir, designer, taxSpecialist],
   },
 ];
 
-/** 拉平取所有实际成员（不含神秘占位） */
+/** 拉平取所有实际成员（含即将发布，不含占位） */
 export const allRealCrew: CrewMember[] = [
   hrbp, itEngineer,
-  salesCs, bd,
-  mediaOperator, designer, videoProducer,
+  bd, mediaOperator, videoProducer, salesCs,
+  ir, designer, taxSpecialist,
 ];
 
-/** 内部支撑 crew（不含幕僚长，幕僚长形象预留给 IR 角色） */
+/** 内部支撑 crew */
 export const supportCrew = [hrbp, itEngineer];
 /** 前台业务 crew */
-export const businessCrew = [salesCs, bd, mediaOperator, designer, videoProducer];
+export const businessCrew = [bd, mediaOperator, videoProducer, salesCs, ir, designer, taxSpecialist];
