@@ -47,13 +47,13 @@ export default function Home() {
               你专注方向，<strong className="text-primary">AI 负责执行</strong>
             </h2>
             <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
-              创业起步，最耗心力的往往不是战略和方向——而是那些必须做、却极其琐碎的事：写内容、发文章、找客户、回咨询、做设计、盯财税。
+              创业起步，最耗心力的往往不是战略和方向——而是那些必须做、却极其琐碎的事：<span className="whitespace-nowrap">写内容、</span><span className="whitespace-nowrap">发文章、</span><span className="whitespace-nowrap">找客户、</span><span className="whitespace-nowrap">回咨询、</span><span className="whitespace-nowrap">做设计、</span><span className="whitespace-nowrap">盯财税。</span>
             </p>
             <p className="text-text-secondary text-base sm:text-lg leading-relaxed mt-4">
               这些事情一件都不能少，但每一件都在消耗你最宝贵的时间。
             </p>
             <p className="text-text-secondary text-lg leading-relaxed mt-4">
-              Wiseflow 为你提供一支 <strong>7×24 在线的 AI 团队</strong>，替你完成这些执行层的工作。而你，只需要做决策、定方向。
+              Wiseflow 为你提供一支 <strong>7×24 在线的 AI 团队</strong>，替你完成这些执行层的工作。而你，<span className="whitespace-nowrap">只需要做决策、</span><span className="whitespace-nowrap">定方向。</span>
             </p>
           </div>
         </div>
@@ -112,11 +112,11 @@ export default function Home() {
       {/* CTA */}
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-6 sm:px-16 lg:px-24 text-center">
-          <p className="text-2xl sm:text-3xl font-bold text-white mb-8 leading-relaxed">
-            准备好拥有你的第一支 AI 团队<span className="whitespace-nowrap">了吗？</span>{" "}
-            <span className="text-text-secondary font-normal text-base sm:text-lg">
-              开源版永久免费，零成本即可开始。需要托管服务或更多功能？也可以联系我们。
-            </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <span className="whitespace-nowrap">准备好拥有你的第一支 AI 团队</span><span className="whitespace-nowrap">了吗？</span>
+          </h2>
+          <p className="text-text-secondary text-lg mb-8">
+            开源版永久免费，零成本即可开始。需要托管服务或更多功能？也可以联系我们。
           </p>
           <Link
             href="/contact"
