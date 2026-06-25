@@ -22,8 +22,6 @@ export default function Footer() {
               <li><a href="/teams" className="text-sm text-text-secondary hover:text-white transition-colors">AI 团队</a></li>
               <li><a href="/pricing" className="text-sm text-text-secondary hover:text-white transition-colors">价格方案</a></li>
               <li><a href="/cases" className="text-sm text-text-secondary hover:text-white transition-colors">客户案例</a></li>
-              <li><a href="/privacy" className="text-sm text-text-secondary hover:text-white transition-colors">隐私政策</a></li>
-              <li><a href="/terms" className="text-sm text-text-secondary hover:text-white transition-colors">服务条款</a></li>
             </ul>
           </div>
 
@@ -39,6 +37,8 @@ export default function Footer() {
 
         {/* 备案信息 */}
         <div className="mt-10 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center">
+          <a href="/privacy" className="text-xs text-text-muted hover:text-white transition-colors">隐私政策</a>
+          <a href="/terms" className="text-xs text-text-muted hover:text-white transition-colors">服务条款</a>
           <a
             href="https://beian.miit.gov.cn/"
             target="_blank"
