@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="border-t border-white/5 bg-background">
@@ -33,8 +35,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ICP 备案 */}
-        <div className="mt-10 pt-6 border-t border-white/5 text-center">
+        {/* 备案信息 */}
+        <div className="mt-10 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center">
           <a
             href="https://beian.miit.gov.cn/"
             target="_blank"
@@ -42,6 +44,21 @@ export default function Footer() {
             className="text-xs text-text-muted hover:text-white transition-colors"
           >
             沪ICP备2025145497号-7
+          </a>
+          <a
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=31010602010265"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-white transition-colors"
+          >
+            <Image
+              src="/beian-mps.png"
+              alt="公安网备"
+              width={16}
+              height={16}
+              className="inline-block"
+            />
+            沪公网安备31010602010265号
           </a>
         </div>
       </div>
