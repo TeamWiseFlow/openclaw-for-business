@@ -22,6 +22,8 @@ export default function Footer() {
               <li><a href="/teams" className="text-sm text-text-secondary hover:text-white transition-colors">AI 团队</a></li>
               <li><a href="/pricing" className="text-sm text-text-secondary hover:text-white transition-colors">价格方案</a></li>
               <li><a href="/cases" className="text-sm text-text-secondary hover:text-white transition-colors">客户案例</a></li>
+              <li><a href="/privacy" className="text-sm text-text-secondary hover:text-white transition-colors">隐私政策</a></li>
+              <li><a href="/terms" className="text-sm text-text-secondary hover:text-white transition-colors">服务条款</a></li>
             </ul>
           </div>
 
